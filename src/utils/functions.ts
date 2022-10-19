@@ -19,7 +19,7 @@ export const setColorLocalStorage = (color: Color): void => {
 }
 
 export const getColorLocalStorage = (): Color => {
-  let color: Color = buttonColors.purple
+  let color: Color = buttonColors.grey;
   if (window.localStorage.getItem('btnColor')) {
     //@ts-ignore
     color = JSON.parse(window.localStorage.getItem('btnColor'))
