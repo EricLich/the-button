@@ -1,9 +1,8 @@
 import { buttonColors } from "./colors";
 import { Color, COLOR_CLICK_TIMES } from "./types";
 
-
+// function to return the color to set on the btn
 export const colorSelection = (counter: number): { color: Color, colorName: string } => {
-
   if (counter >= COLOR_CLICK_TIMES.PURPLE) return { color: buttonColors.purple, colorName: 'purple' };
   if (counter < COLOR_CLICK_TIMES.PURPLE && counter >= COLOR_CLICK_TIMES.BLUE) return { color: buttonColors.blue, colorName: 'blue' };
   if (counter < COLOR_CLICK_TIMES.BLUE && counter >= COLOR_CLICK_TIMES.GREEN) return { color: buttonColors.green, colorName: 'green' };
@@ -14,10 +13,12 @@ export const colorSelection = (counter: number): { color: Color, colorName: stri
   return { color: buttonColors.grey, colorName: 'notClicked' };
 }
 
+// function to set the color after click on localstorage to persist
 export const setColorLocalStorage = (color: Color): void => {
   window.localStorage.setItem('btnColor', JSON.stringify(color));
 }
 
+// function to get the btn color from localstorage if it's benn set before. If not we return the grey basic color
 export const getColorLocalStorage = (): Color => {
   let color: Color = buttonColors.grey;
   if (window.localStorage.getItem('btnColor')) {

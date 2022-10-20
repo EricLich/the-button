@@ -1,5 +1,6 @@
 import { Colors } from "./types";
 
+// const with all different colors necessary to follow the guidelines specified on the challenge (using tailwind classes)
 export const buttonColors: Colors = {
   notClickable: {
     bgColor: 'white',
