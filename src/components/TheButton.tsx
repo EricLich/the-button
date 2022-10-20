@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { buttonColors } from "../utils/colors";
 import {
   colorSelection,
   getColorLocalStorage,
@@ -108,7 +107,7 @@ const TheButton: React.FC<TheButtonProps> = ({
     }
   };
 
-  // executing handleCountdown each second and triggering the use effect with the tickTock from the state
+  // executing handleCountdown and generateRandomClick each second and triggering the use effect with the tickTock from the state
   useEffect(() => {
     const count = setTimeout(() => {
       handleCountdown();
