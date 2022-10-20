@@ -27,12 +27,14 @@ interface TheButtonProps {
     React.SetStateAction<ColorSelectedTimes>
   >;
   colorSelectedTimes: ColorSelectedTimes;
+  setTotalClicks: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const TheButton: React.FC<TheButtonProps> = ({
   setOpenInfo,
   setColorSelectedTimes,
   colorSelectedTimes,
+  setTotalClicks,
 }) => {
   //getting the color if there's any on the local storage, else, it will be the purple one
   const localColor = getColorLocalStorage();
@@ -75,6 +77,7 @@ const TheButton: React.FC<TheButtonProps> = ({
       ...prev,
       [colorName]: newValue,
     }));
+    setTotalClicks((prev) => (prev += 1));
 
     if (currentUserClicked) {
       // setting the local storage with the new colors to display and save when the current user is the one clicking
@@ -96,7 +99,7 @@ const TheButton: React.FC<TheButtonProps> = ({
   const generateAutoClick = (): void => {
     const randomNum: number = Math.floor(Math.random() * 10);
     // generate a random click
-    if (randomNum > 7) {
+    if (randomNum > 8) {
       setClock((prev) => ({
         ...prev,
         remainingSecs: TIMER_MAX_TIME,

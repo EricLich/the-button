@@ -8,7 +8,7 @@ import { useState } from "react";
 const FETCH_URL = "https://jsonplaceholder.typicode.com/users";
 
 const MainContent = () => {
-  //fetching random user from json placeholder api
+  //fetching random user from json placeholder api with custom fetch hook
   const { data: users, loading, error } = useFetch<User>(FETCH_URL);
   const [openInfo, setOpenInfo] = useState<boolean>(false);
   const [colorSelectedTimes, setColorSelectedTimes] =
@@ -21,15 +21,22 @@ const MainContent = () => {
       red: 0,
       yellow: 0,
     });
+  const [totalClicks, setTotalClicks] = useState<number>(0);
 
   return (
-    <main className="w-full h-[calc(100vh-80px)] grid place-content-center">
+    <main className="w-full h-[calc(100vh-80px)] flex flex-col items-center justify-center gap-8">
       <TheButton
         setOpenInfo={setOpenInfo}
         setColorSelectedTimes={setColorSelectedTimes}
         colorSelectedTimes={colorSelectedTimes}
+        setTotalClicks={setTotalClicks}
       />
-      {openInfo && <ClicksInfo colorSelectedTimes={colorSelectedTimes} />}
+      {openInfo && (
+        <ClicksInfo
+          colorSelectedTimes={colorSelectedTimes}
+          totalClicks={totalClicks}
+        />
+      )}
     </main>
   );
 };
