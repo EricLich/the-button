@@ -7,6 +7,16 @@ export enum COLOR_CLICK_TIMES {
   RED = 0,
 }
 
+export type ColorSelectedTimes = {
+  purple: number;
+  blue: number;
+  green: number;
+  yellow: number;
+  orange: number;
+  red: number;
+  notClicked: number;
+}
+
 export type Colors = {
   notClickable: Color;
   grey: Color;
@@ -28,3 +38,4 @@ export type User = {
   name: string;
   email: string;
 }
+
