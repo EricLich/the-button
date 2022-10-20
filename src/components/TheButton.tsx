@@ -98,7 +98,7 @@ const TheButton: React.FC<TheButtonProps> = ({
   const generateAutoClick = (): void => {
     const randomNum: number = Math.floor(Math.random() * 10);
     // generate a random click - the higher the number the les probability to generate a random click
-    if (randomNum > 9) {
+    if (randomNum > 8) {
       setClock((prev) => ({
         ...prev,
         remainingSecs: TIMER_MAX_TIME,

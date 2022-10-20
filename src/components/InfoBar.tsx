@@ -35,7 +35,7 @@ const InfoBar: React.FC<InfoBarProps> = ({ clicks, color, totalClicks }) => {
         <h3 className="text-xl">{color.toUpperCase()}:</h3>
         <p className="text-md">Clicked {clicks} times</p>
       </div>
-      <h2 className="ml-auto text-2xl">{percentage}%</h2>
+      <h2 className="ml-auto text-2xl font-medium">{percentage}%</h2>
     </div>
   );
 };
