@@ -54,7 +54,7 @@ const TheButton: React.FC<TheButtonProps> = ({
     if (clock.remainingSecs > 0) {
       setClock((prev) => ({
         ...prev,
-        remainingSecs: prev.remainingSecs--,
+        remainingSecs: prev.remainingSecs - 1,
         tickTock: !prev.tickTock,
       }));
     }
