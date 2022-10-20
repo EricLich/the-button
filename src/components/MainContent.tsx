@@ -30,7 +30,7 @@ const MainContent = () => {
   const [totalClicks, setTotalClicks] = useState<number>(0);
 
   return (
-    <main className="w-full h-[calc(100vh-80px)] flex flex-col items-center justify-center gap-4 md:gap-8">
+    <main className="w-full md:min-h-[calc(100vh-100px)] md:h-auto flex flex-col items-center justify-center gap-4 md:gap-8 overflow-auto py-6">
       {/* rendering button component and passing necessary data for the expected behavior */}
       <TheButton
         setOpenInfo={setOpenInfo}
