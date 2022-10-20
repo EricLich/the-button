@@ -27,15 +27,15 @@ const InfoBar: React.FC<InfoBarProps> = ({ clicks, color, totalClicks }) => {
   return (
     <div
       /* bar styling using the dynamic colors grabbed before */
-      className={`w-full h-16 border flex items-center px-3 py-1 rounded-lg ${
+      className={`w-full h-10 md:h-16 flex items-center px-2 md:px-3 py-1 rounded-lg ${
         colorsToShow && colorsToShow.bgColor
       } ${colorsToShow && colorsToShow.textColor}`}
     >
-      <div className="flex items-center gap-2">
-        <h3 className="text-xl">{color.toUpperCase()}:</h3>
-        <p className="text-md">Clicked {clicks} times</p>
+      <div className="flex items-center gap-1 md:gap-2">
+        <h3 className="text-sm md:text-xl">{color.toUpperCase()}:</h3>
+        <p className="text-xs md:text-md">Clicked {clicks} times</p>
       </div>
-      <h2 className="ml-auto text-2xl font-medium">{percentage}%</h2>
+      <h2 className="ml-auto text-lg md:text-2xl font-medium">{percentage}%</h2>
     </div>
   );
 };

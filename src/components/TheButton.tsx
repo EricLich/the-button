@@ -130,7 +130,7 @@ const TheButton: React.FC<TheButtonProps> = ({
         clock.alreadyClicked ? "cursor-not-allowed" : "cursor-pointer"
       } ${clock.color.currentBgColor} ${
         clock.color.currentTextColor
-      } w-[200px] h-[100px] rounded-3xl shadow-2xl text-5xl hover:bg-[url('/src/assets/imgs/never-gonna.gif')] hover:bg-cover hover:bg-center`}
+      } w-[150px] md:w-[200px] h-[60px] md:h-[100px] rounded-xl md:rounded-3xl shadow-2xl text-2xl md:text-5xl hover:bg-[url('/src/assets/imgs/never-gonna.gif')] hover:bg-cover hover:bg-center`}
     >
       {clock.remainingSecs}
     </button>

@@ -13,7 +13,7 @@ const ClicksInfo: React.FC<ClicksInfoProps> = ({
 }) => {
   /* mapping through the keys of the color click counters and passing the color name, the amount of clicks that color has and the total clicks */
   return (
-    <div className="w-[90%] max-w-[900px] p-5 flex flex-col justify-between gap-4 items-center bg-white rounded-xl shadow-2xl">
+    <div className="w-[90%] max-w-[900px] p-3 md:p-5 flex flex-col justify-between gap-3 md:gap-4 items-center bg-white rounded-xl shadow-2xl">
       {Object.keys(colorSelectedTimes).map((color: string) => (
         <InfoBar
           key={color}
